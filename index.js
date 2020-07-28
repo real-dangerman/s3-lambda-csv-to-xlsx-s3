@@ -17,7 +17,7 @@ exports.handler = function (eventObject, context) {
     inputBucket = eventRecord.s3.bucket.name,
     key = eventRecord.s3.object.key,
     id = context.awsRequestId,
-    resultKey = key + EXTENSION + yyyy + mm + dd,
+    resultKey = key + '_' + yyyy + mm + dd + EXTENSION,
     tempPath = path.join(os.tmpdir(),  id),
     convertedPath = path.join(os.tmpdir(), 'converted-' + id + EXTENSION);
 
